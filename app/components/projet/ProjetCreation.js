@@ -12,10 +12,10 @@ const ProjetCreation = (props) => {
             placeholder = "Client" 
             className = "c-input" />
         Nouveau client ?
-        <button className = "c-button --primary margin-top-small">
+        <button className = "c-button --primary u-margin-top-small">
             Créer un client
         </button>
-        <button className = "c-button --primary margin-top-small float-right">
+        <button className = "c-button --primary u-margin-top-small u-float-right">
             Enregistrer le projet
         </button>
     </div>

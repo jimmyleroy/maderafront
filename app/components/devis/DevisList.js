@@ -7,7 +7,7 @@ const DevisList = (props) => {
     return (
       <DevisListItem 
         devis = { devis }
-        key = { devis.name } />
+        key = { devis.id } />
     );
   })
 

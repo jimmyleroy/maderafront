@@ -8,6 +8,7 @@
 @import "./components/navigation.scss";
 @import "./components/overlay.scss";
 @import "./components/panelToggle.scss";
+@import "./components/select.scss";
 
 * {
   box-sizing: border-box
@@ -34,10 +35,18 @@ main {
 }
 
 // Helpers
-.margin-top-small {
+.u-margin-top-small {
   margin-top: $size-small;
 }
 
-.float-right {
+.u-margin-bottom-small {
+  margin-bottom: $size-small;
+}
+
+.u-float-right {
   float: right;
+}
+
+.u-text-heavy {
+  font-weight: 800;
 }

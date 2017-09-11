@@ -4,16 +4,14 @@ export default class PanelToggle extends Component {
 
   constructor(props) {
     super(props);
-
     this.state = {
-      toggle : this.props.toggle,
-      header : this.props.header
+      toggle : false,
     }
   }
 
-  closePanelToggle() {
+  toggle() {
     this.setState({
-      toggle : false
+      toggle : !this.state.toggle
     });
   }
 
@@ -23,16 +21,18 @@ export default class PanelToggle extends Component {
         <div>
           <div className = "c-panel-toggle">
             <div className = "c-panel-toggle__header">
-              <span>{ this.state.header }</span>
+              <span>{ this.props.header }</span>
               <span 
-                onClick = { () => this.closePanelToggle() }
+                onClick = { () => this.toggle() }
                 className = "c-panel-toggle__cross">
                 X
               </span>
             </div>
             { this.props.children }
           </div>
-          <div className = "c-overlay"></div>
+          <div 
+            onClick = { () => this.toggle() }
+            className = "c-overlay"></div>
         </div>
       );
     } else {

@@ -1,11 +1,11 @@
 import React , { Component } from "react";
-import ProjetList from '../components/ProjetList';
-import ProjetCreation from '../components/ProjetCreation';
-import PanelToggle from '../components/PanelToggle';
+import ProjetList from '../components/projet/ProjetList';
+import ProjetCreation from '../components/projet/ProjetCreation';
+import PanelToggle from '../components/common/PanelToggle';
 
 export default class ProjetPage extends Component {
-  constructor(props) {
-    super(props);
+  constructor(props, context) {
+    super(props, context);
 
     this.state = {
       projetList : [
@@ -28,26 +28,26 @@ export default class ProjetPage extends Component {
           commercial : "hector le castor",
         }
       ],
-      panelCreationToggle : true
+      panelCreationToggle : false
     };
+  }
+
+  onProjetCreationButtonClicked() {
+    this.refs.panelToggleReference.toggle();
   }
 
   render() {
     return (
       <div>
-        <button 
+        <button
           className = "c-button --primary"
-          onClick = { () =>
-            this.setState({
-              panelCreationToggle : true
-            })}
-          >
+          onClick = { this.onProjetCreationButtonClicked.bind(this) }>
           Créer projet
         </button>
         <ProjetList projetList = { this.state.projetList } />
         <PanelToggle
-          header = "Créer un projet"
-          toggle = { this.state.panelCreationToggle } >
+          ref = "panelToggleReference"
+          header = "Créer un projet">
           <ProjetCreation />
         </PanelToggle>
       </div>

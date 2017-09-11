@@ -12,7 +12,7 @@ import ProjetPage from './pages/ProjetPage';
 import DevisPage from './pages/DevisPage';
 
 // Components
-import NavigationPanel from './components/NavigationPanel';
+import NavigationPanel from './components/common/NavigationPanel';
 
 //  Styles  
 import SCSS from './styles/app.scss';
