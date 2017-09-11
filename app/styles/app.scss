@@ -1,31 +1,43 @@
-html, body, [id="container"] {
+@import "settings";
+
+// Components
+@import "./components/button.scss";
+@import "./components/card.scss";
+@import "./components/input.scss";
+@import "./components/logo.scss";
+@import "./components/navigation.scss";
+@import "./components/overlay.scss";
+@import "./components/panelToggle.scss";
+
+* {
+  box-sizing: border-box
+}
+
+html, body, [class="container"] {
   height: 100%;
   overflow: hidden;
+  font-family: $font-primary; 
 }
 
 main {
   display: flex;
   width: 100%;
   height: 100%;
-  color: #2f2f2f
 }
 
-.c-navigation-panel {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-basis: 25%;
-  height: 100%;
-  overflow: hidden;
-  background-color: lightgrey;
+.page-content {
+  width: 100%;
+  padding: $size-normal;
+  margin: $size-normal;
+  border: $size-tiniest solid $color-grey; 
 }
 
-.c-page-content {
-  display: flex; 
-  padding: 20px;
+// Helpers
+
+.margin-top-small {
+  margin-top: $size-small;
 }
 
-.c-card {
-  padding: 20px;
-  border: solid 1px lightgrey ;
+.float-right {
+  float: right;
 }

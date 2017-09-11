@@ -1,0 +1,15 @@
+.c-card {
+  display : flex;
+  padding : $size-normal;
+  margin-bottom : $size-normal;
+  border : solid $size-tiniest $color-grey ;
+}
+
+.c-card:first-child {
+  margin-top : $size-normal;
+
+}
+
+.c-card__item {
+  margin : 0 $size-smallest;
+}

@@ -1,23 +1,48 @@
 //  React
-import React from 'react';  
-import ReactDOM from 'react-dom';  
-
-//  Components
-import WelcomeMessage from './components/WelcomeMessage.component.jsx';
-import NavigationPanel from './components/NavigationPanel.component.jsx';
-import PageContent from './components/PageContent.component.jsx';
+import React, { Component } from "react";
+import ReactDOM from "react-dom";
+import { 
+  BrowserRouter as Router, 
+  Route, 
+  Link 
+} from 'react-router-dom'
 
 // Pages
-import Home from './pages/Home.page.jsx';
+import ProjetPage from './pages/ProjetPage';
+import DevisPage from './pages/DevisPage';
+
+// Components
+import NavigationPanel from './components/NavigationPanel';
 
 //  Styles  
-import SCSS from './styles/app.scss'
+import SCSS from './styles/app.scss';
+import RESET from './styles/reset.scss'
 
-const appData = {  
-  name: 'ta ddch'
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {}
+    this.api();
+  }
+
+  api() {}
+
+  render() {
+    return (
+      <Router>
+        <main>
+          <NavigationPanel />
+          <div className = "page-content">
+            <Route exact path = "/" component = { ProjetPage } />
+            <Route exact path = "/devis" component = { DevisPage } />
+          </div>
+        </main>
+      </Router>
+    )
+  }
 }
 
 ReactDOM.render(
-  <Home />, 
-  document.getElementById('container')
-);
+  <App />,
+  document.querySelector(".container")
+)

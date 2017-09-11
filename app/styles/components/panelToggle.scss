@@ -1,0 +1,25 @@
+.c-panel-toggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 50%;
+  padding : 0 $size-normal;
+  z-index: 2;
+  background-color: $color-grey-lightest;
+
+  .c-panel-toggle__header {
+    display: flex;
+    justify-content: space-between;
+    padding: $size-normal;
+    margin-bottom: $size-normal;
+    margin-left: -$size-normal;
+    margin-right: -$size-normal;
+    background-color: $color-secondary-dark;
+    color: $color-grey-lightest;
+  }
+
+  .c-panel-toggle__cross {
+    cursor: pointer;
+  }
+}

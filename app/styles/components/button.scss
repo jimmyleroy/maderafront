@@ -1,0 +1,16 @@
+.c-button {
+  display: flex;
+  padding: $size-smaller $size-small;
+  border: none;
+  border-radius: $size-smallest;
+  cursor: pointer;
+
+  &.--primary {
+    background-color: $color-primary;
+    color: $color-grey-lightest;
+
+    &:hover {
+      background-color: $color-primary-dark;
+    }
+  }
+}
