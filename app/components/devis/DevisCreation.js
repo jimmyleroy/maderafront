@@ -1,21 +1,46 @@
-import React from "react";
+import React, { Component } from "react";
 import ModeleList from '../modele/ModeleList';
 
-const DevisCreation = (props) => {
+export default class DevisCreation extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            selectedGamme : this.props.gammeList[0]    
+        };
+        this.onGammeSelectChange = this.onGammeSelectChange.bind(this);
 
-    const modeleList = props.modeleList;
-        
-    return (
-        <div>
-            Choisir une gamme : 
-            <select className = "c-select u-margin-top-small">
-                <option>ok</option>
-                <option>non</option>
-            </select>
-            Choisir un modèle : 
-            <ModeleList modeleList = { modeleList } />
-        </div>
-    );
-};
+    }
 
-export default DevisCreation;
+    onGammeSelectChange() {
+        console.log("AHHHH" + this.props);
+        this.props.gammeList.map((gamme) => {
+            console.log(event.target.options[event.target.selectedIndex].id);
+        });   
+    }
+
+    render() {
+        const gammeOptionList = this.props.gammeList.map((gamme) => {
+            return (
+                <option 
+                    key = { gamme.id }
+                    id = { gamme.id }>
+                    { gamme.name }
+                </option>
+            );
+        });
+
+        return (
+            <div>
+                Choisir une gamme : 
+                <select
+                    value = { this.state.selectedGamme }
+                    onChange = { this.onGammeSelectChange }
+                    className = "c-select u-margin-top-small">
+                    { gammeOptionList }
+                </select>
+                Choisir un modèle : 
+                <ModeleList modeleList = { this.state.selectedGamme.modeleList } />
+            </div>
+        );
+    }
+}
