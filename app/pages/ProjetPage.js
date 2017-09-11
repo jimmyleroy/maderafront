@@ -10,32 +10,26 @@ export default class ProjetPage extends Component {
     this.state = {
       projetList : [
         {
-          if : 1,
-          name : "devis1",
+          id : 1,
+          name : "projet1",
           client : "toto le chameau",
           commercial : "hector le castor",
         },
         {
           id : 2,
-          name : "devis2",
+          name : "projet2",
           client : "toto le chameau",
           commercial : "hector le castor",
         },
         {
           id : 3,
-          name : "devis3",
+          name : "projet3",
           client : "toto le chameau",
           commercial : "hector le castor",
         }
       ],
-      panelToggle : true
+      panelCreationToggle : true
     };
-  }
-
-  onPanelToggle() {
-    this.setState({
-      panelToggle : true
-    });
   }
 
   render() {
@@ -43,14 +37,17 @@ export default class ProjetPage extends Component {
       <div>
         <button 
           className = "c-button --primary"
-          onClick = { 
-            () => this.onPanelToggle() } >
+          onClick = { () =>
+            this.setState({
+              panelCreationToggle : true
+            })}
+          >
           Créer projet
         </button>
         <ProjetList projetList = { this.state.projetList } />
         <PanelToggle
           header = "Créer un projet"
-          toggle = { this.state.panelToggle } >
+          toggle = { this.state.panelCreationToggle } >
           <ProjetCreation />
         </PanelToggle>
       </div>

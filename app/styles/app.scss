@@ -29,11 +29,11 @@ main {
   width: 100%;
   padding: $size-normal;
   margin: $size-normal;
-  border: $size-tiniest solid $color-grey; 
+  overflow-y: auto;
+  border: $size-tiniest solid $color-grey;
 }
 
 // Helpers
-
 .margin-top-small {
   margin-top: $size-small;
 }

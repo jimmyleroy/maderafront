@@ -24,26 +24,17 @@ export default class DevisPage extends Component {
         }
       ]
     };
-
-    if (!this.state.devisList) {
-      return <div>Loading ...</div>;
-    }
-
-    // this.devisListApi();
   }
-
-  // devisListApi() {
-  //   const devisList = [
-  //   ];
-
-  //   this.setState({
-  //     devisList : devisList
-  //   });
-  // }
 
   render() {
     return (
-      <DevisList devisList = { this.state.devisList } />
+      <div>
+        <button 
+          className = "c-button --primary">
+          Créer devis
+        </button>
+        <DevisList devisList = { this.state.devisList } />
+      </div>
     );
   }
 }
