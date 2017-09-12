@@ -5,7 +5,7 @@ import PanelToggle from '../components/common/PanelToggle';
 
 export default class ProjetPage extends Component {
   constructor(props, context) {
-    super(props, context);
+    super(props);
 
     this.state = {
       projetList : [
@@ -14,26 +14,85 @@ export default class ProjetPage extends Component {
           name : "projet1",
           client : "toto le chameau",
           commercial : "hector le castor",
+          devisList: [
+            {
+              id: 1,
+              name: "devis1",
+              client: "toto le chameau",
+              commercial: "hector le castor",
+            },
+            {
+              id: 2,
+              name: "devis2",
+              client: "toto le chameau",
+              commercial: "hector le castor",
+            },
+            {
+              id: 3,
+              name: "devis3",
+              client: "toto le chameau",
+              commercial: "hector le castor",
+            }
+          ]
         },
         {
           id : 2,
           name : "projet2",
           client : "toto le chameau",
           commercial : "hector le castor",
+          devisList: [
+            {
+              id: 1,
+              name: "devis1",
+              client: "toto le chameau",
+              commercial: "hector le castor",
+            },
+            {
+              id: 2,
+              name: "devis2",
+              client: "toto le chameau",
+              commercial: "hector le castor",
+            },
+            {
+              id: 3,
+              name: "devis3",
+              client: "toto le chameau",
+              commercial: "hector le castor",
+            }
+          ]
         },
         {
           id : 3,
           name : "projet3",
           client : "toto le chameau",
           commercial : "hector le castor",
+          devisList: [
+            {
+              id: 1,
+              name: "devis1",
+              client: "toto le chameau",
+              commercial: "hector le castor",
+            },
+            {
+              id: 2,
+              name: "devis2",
+              client: "toto le chameau",
+              commercial: "hector le castor",
+            },
+            {
+              id: 3,
+              name: "devis3",
+              client: "toto le chameau",
+              commercial: "hector le castor",
+            }
+          ]
         }
       ],
-      panelCreationToggle : false
     };
   }
 
   onProjetCreationButtonClicked() {
-    this.refs.panelToggleReference.toggle();
+    this.refs.panelProjetCreationToggleReference.toggle();
   }
 
   render() {
@@ -46,7 +105,7 @@ export default class ProjetPage extends Component {
         </button>
         <ProjetList projetList = { this.state.projetList } />
         <PanelToggle
-          ref = "panelToggleReference"
+          ref = "panelProjetCreationToggleReference"
           header = "Créer un projet">
           <ProjetCreation />
         </PanelToggle>

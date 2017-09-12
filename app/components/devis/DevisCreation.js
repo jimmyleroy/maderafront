@@ -5,21 +5,91 @@ export default class DevisCreation extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            selectedGamme : this.props.gammeList[0]    
+            gammeList: [
+                {
+                    id : 1,
+                    name : "gamme 1",
+                    modeleList : [
+                        {
+                            id: 1,
+                            name: "modèle1",
+                            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sem quam, tristique vitae purus ac, fermentum iaculis urna.",
+                            imgUrl: "https://seeklogo.com/images/D/dragon-logo-62F627B731-seeklogo.com.png"
+                        },
+                        {
+                            id: 2,
+                            name: "modèle2",
+                            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sem quam, tristique vitae purus ac, fermentum iaculis urna.",
+                            imgUrl: "https://www.laboutiquedubois.com/media/produit/epaisseurs-contreplaqu-pm-34.jpg"
+                        },
+                        {
+                            id: 3,
+                            name: "modèle3",
+                            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sem quam, tristique vitae purus ac, fermentum iaculis urna.",
+                            imgUrl: "https://seeklogo.com/images/D/dragon-logo-62F627B731-seeklogo.com.png"
+                        },
+                        {
+                            id: 4,
+                            name: "modèle4",
+                            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sem quam, tristique vitae purus ac, fermentum iaculis urna.",
+                            imgUrl: "https://www.laboutiquedubois.com/media/produit/epaisseurs-contreplaqu-pm-34.jpg"
+                        }
+                    ]
+                },
+                {
+                    id : 2,
+                    name : "gamme 2",
+                    modeleList : [
+                        {
+                            id: 1,
+                            name: "sacré codec",
+                            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sem quam, tristique vitae purus ac, fermentum iaculis urna.",
+                            imgUrl: "https://seeklogo.com/images/D/dragon-logo-62F627B731-seeklogo.com.png"
+                        },
+                        {
+                            id: 2,
+                            name: "modèle2",
+                            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sem quam, tristique vitae purus ac, fermentum iaculis urna.",
+                            imgUrl: "https://www.laboutiquedubois.com/media/produit/epaisseurs-contreplaqu-pm-34.jpg"
+                        },
+                        {
+                            id: 3,
+                            name: "modèle3",
+                            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sem quam, tristique vitae purus ac, fermentum iaculis urna.",
+                            imgUrl: "https://seeklogo.com/images/D/dragon-logo-62F627B731-seeklogo.com.png"
+                            },
+                        {
+                            id: 4,
+                            name: "modèle4",
+                            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sem quam, tristique vitae purus ac, fermentum iaculis urna.",
+                            imgUrl: "https://www.laboutiquedubois.com/media/produit/epaisseurs-contreplaqu-pm-34.jpg"
+                        }
+                    ]
+                }
+            ],
+            selectedGamme : {  }   
         };
-        this.onGammeSelectChange = this.onGammeSelectChange.bind(this);
 
+        console.log(this.state.gammeList[0]);
+        this.state.selectedGamme = this.state.gammeList[0];
+        console.log(this.state.selectedGamme);
+        this.onGammeSelectChange = this.onGammeSelectChange.bind(this);
     }
 
-    onGammeSelectChange() {
-        console.log("AHHHH" + this.props);
-        this.props.gammeList.map((gamme) => {
-            console.log(event.target.options[event.target.selectedIndex].id);
-        });   
+    onGammeSelectChange(event) {
+        this.state.gammeList.map((gamme) => {
+            const optionId = event.target.options[event.target.selectedIndex].id;
+            console.log(gamme + optionId);
+            if (gamme.id = optionId) {
+                this.setState({
+                    selectedGamme : gamme
+                });
+            }
+        });
     }
 
     render() {
-        const gammeOptionList = this.props.gammeList.map((gamme) => {
+        const gammeOptionList = this.state.gammeList.map((gamme) => {
             return (
                 <option 
                     key = { gamme.id }
@@ -28,6 +98,21 @@ export default class DevisCreation extends Component {
                 </option>
             );
         });
+
+        const modeleList = () => {
+            return (
+                <div>ok</div>
+            );
+            // console.log("connard");
+            // console.log(this.state.selectedGamme);
+            // if (this.state.selectedGamme) {
+            //     return (
+            //         <ModeleList modeleList = { this.state.selectedGamme.modeleList } />                    
+            //     );
+            // } else {
+            //     return ( null );
+            // }
+        }
 
         return (
             <div>
@@ -38,8 +123,8 @@ export default class DevisCreation extends Component {
                     className = "c-select u-margin-top-small">
                     { gammeOptionList }
                 </select>
-                Choisir un modèle : 
-                <ModeleList modeleList = { this.state.selectedGamme.modeleList } />
+                Choisir un modèle :
+                { modeleList }
             </div>
         );
     }

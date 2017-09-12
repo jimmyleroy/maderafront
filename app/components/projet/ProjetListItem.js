@@ -1,24 +1,49 @@
-import React from "react";
+import React, { Component } from "react";
+import { Link } from 'react-router-dom';
+import ProjetDetail from './ProjetDetail';
+import PanelToggle from '../common/PanelToggle';
 
-const ProjetListItem = ({ projet }) => {
+export default class ProjetListItem extends Component {
 
-  const name = projet.name;
-  const commercial = projet.commercial;
-  const client = projet.client;
+  constructor(props) {
+    super(props);
+    this.state = {
+    };
+  }
 
-  return (
-    <li className = "c-card">
-      <div className = "c-card__item">
-        { name }
+  onProjetDetailButtonClicked() {
+    this.refs.projectDetailPanelToggleReference.toggle();
+  }
+
+  render() {
+    const name = this.props.projet.name;
+    const commercial = this.props.projet.commercial;
+    const client = this.props.projet.client;
+
+    return (
+      <div>
+        <li className = "c-card">
+          <div className = "c-card__item">
+            { name }
+          </div>
+          <div className = "c-card__item">
+            { commercial }
+          </div>
+          <div className = "c-card__item">
+            { client }
+          </div>
+          <button
+            className = "c-button --primary u-margin-left-small"
+            onClick = { this.onProjetDetailButtonClicked.bind(this) }>
+            Voir le détail
+          </button>
+        </li>
+        <PanelToggle
+          ref = "projectDetailPanelToggleReference"
+          header = { "Détail du projet : " + name }>
+          <ProjetDetail projet = { this.props.projet } />
+        </PanelToggle>
       </div>
-      <div className = "c-card__item">
-        { commercial }
-      </div>
-      <div className = "c-card__item">
-        { client }
-      </div>
-    </li>
-  );
-};
-
-export default ProjetListItem;
+    );
+  }
+}

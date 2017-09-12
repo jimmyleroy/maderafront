@@ -6,16 +6,16 @@
   height: 100%;
   overflow: hidden;
   background-color: $color-primary;
-}
 
-.c-navigation__item {
-  padding: $size-normal;
-  text-align: center;
-  text-decoration: none;
-  color: $color-grey-lightest;
-}
+  > .c-navigation__item {
+      padding: $size-normal;
+      text-align: center;
+      text-decoration: none;
+      color: $color-grey-lightest;
 
-.c-navigation__item:hover {
-  background-color : $color-primary-dark;
-  color : $color-grey-lightest;
+      &:hover {
+        background-color : $color-primary-dark;
+        color : $color-grey-lightest;  
+      }
+  }
 }
