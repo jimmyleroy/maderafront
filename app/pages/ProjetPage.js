@@ -4,9 +4,8 @@ import ProjetCreation from '../components/projet/ProjetCreation';
 import PanelToggle from '../components/common/PanelToggle';
 
 export default class ProjetPage extends Component {
-  constructor(props, context) {
+  constructor(props) {
     super(props);
-
     this.state = {
       projetList : [
         {
@@ -89,25 +88,41 @@ export default class ProjetPage extends Component {
         }
       ],
     };
+
+    this.handleProjetCreationSubmit = this.handleProjetCreationSubmit.bind(this);
+    this.toggleCreationPanel = this.toggleCreationPanel.bind(this);        
   }
 
-  onProjetCreationButtonClicked() {
+  toggleCreationPanel() {
     this.refs.panelProjetCreationToggleReference.toggle();
+  }
+
+  handleProjetCreationSubmit(projet) {
+    const projetList = this.state.projetList.slice();
+    
+    projet.id = projetList.length + 1;
+    projetList.push(projet);
+
+    this.setState({
+      projetList : projetList
+    });
   }
 
   render() {
     return (
       <div>
+        <ProjetList projetList = { this.state.projetList } />
         <button
           className = "c-button --primary"
-          onClick = { this.onProjetCreationButtonClicked.bind(this) }>
+          onClick = { this.toggleCreationPanel }>
           Créer projet
         </button>
-        <ProjetList projetList = { this.state.projetList } />
         <PanelToggle
           ref = "panelProjetCreationToggleReference"
           header = "Créer un projet">
-          <ProjetCreation />
+          <ProjetCreation
+            toggleCreationPanel = { this.toggleCreationPanel }
+            handleSubmit = { this.handleProjetCreationSubmit } />
         </PanelToggle>
       </div>
     );

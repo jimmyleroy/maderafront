@@ -6,11 +6,15 @@
   border: solid $size-tiniest $color-grey ;
 
     &:first-child {
-      margin-top: $size-normal;
+      margin-top: 0;
     }
 
     > .c-card__item {
-      margin: 0 $size-smallest;
+      margin: 0 $size-normal;
+
+      &:first-child {
+        margin-left: 0;
+      }
     }
 
     > .c-card__image {

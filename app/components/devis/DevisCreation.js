@@ -67,24 +67,22 @@ export default class DevisCreation extends Component {
                     ]
                 }
             ],
-            selectedGamme : {  }   
+            selectedGamme : {}   
         };
-
-        console.log(this.state.gammeList[0]);
         this.state.selectedGamme = this.state.gammeList[0];
-        console.log(this.state.selectedGamme);
         this.onGammeSelectChange = this.onGammeSelectChange.bind(this);
     }
 
     onGammeSelectChange(event) {
         this.state.gammeList.map((gamme) => {
+            console.log(this.state.gammeList);
             const optionId = event.target.options[event.target.selectedIndex].id;
-            console.log(gamme + optionId);
             if (gamme.id = optionId) {
                 this.setState({
                     selectedGamme : gamme
                 });
             }
+            console.log(this.state.gammeList);
         });
     }
 
@@ -99,21 +97,6 @@ export default class DevisCreation extends Component {
             );
         });
 
-        const modeleList = () => {
-            return (
-                <div>ok</div>
-            );
-            // console.log("connard");
-            // console.log(this.state.selectedGamme);
-            // if (this.state.selectedGamme) {
-            //     return (
-            //         <ModeleList modeleList = { this.state.selectedGamme.modeleList } />                    
-            //     );
-            // } else {
-            //     return ( null );
-            // }
-        }
-
         return (
             <div>
                 Choisir une gamme : 
@@ -121,10 +104,18 @@ export default class DevisCreation extends Component {
                     value = { this.state.selectedGamme }
                     onChange = { this.onGammeSelectChange }
                     className = "c-select u-margin-top-small">
-                    { gammeOptionList }
+                    { this.state.gammeList.map((gamme) => {
+                        return (
+                            <option
+                                key = { gamme.id }
+                                id = { gamme.id }>
+                                { gamme.name }
+                            </option>
+                        );
+                    })}
                 </select>
                 Choisir un modèle :
-                { modeleList }
+                <ModeleList modeleList = { this.state.selectedGamme.modeleList } />
             </div>
         );
     }

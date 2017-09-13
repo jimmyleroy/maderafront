@@ -91,6 +91,8 @@ export default class DevisPage extends Component {
         }
       ]
     };
+
+    this.onDevisCreationButtonClicked = this.onDevisCreationButtonClicked.bind(this);            
   }
 
   onDevisCreationButtonClicked() {
@@ -102,7 +104,7 @@ export default class DevisPage extends Component {
       <div>
         <button
           className = "c-button --primary"
-          onClick = {this.onDevisCreationButtonClicked.bind(this)}>
+          onClick = {this.onDevisCreationButtonClicked}>
           Créer devis
         </button>
         <DevisList devisList = { this.state.devisList } />

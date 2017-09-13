@@ -7,6 +7,8 @@ export default class ProjetDetail extends Component {
   constructor(props) {
     super(props);
     this.state = {};
+
+    this.onDevisCreationButtonClicked = this.onDevisCreationButtonClicked.bind(this);            
   }
   
   onDevisCreationButtonClicked() {
@@ -21,14 +23,26 @@ export default class ProjetDetail extends Component {
     
     return (
       <div>
-        <p className = "u-text-heavy">Projet client</p>
-        <p className = "c-paragraph">{ client }</p>
-        <p className = "u-text-heavy">Commercial</p>
-        <p className = "c-paragraph">{ commercial }</p>
-        <DevisList devisList = { devisList } />
+        <p className = "u-text-heavy">
+          Projet client
+        </p>
+        <p className = "c-paragraph ">
+          { client }
+        </p>
+        <p className = "u-text-heavy u-margin-top-small">
+          Commercial
+        </p>
+        <p className = "c-paragraph">
+          { commercial }
+        </p>
+        <p className = "u-text-heavy u-margin-top-small u-margin-bottom-small">
+          Liste des devis du projet : 
+        </p>
+        <DevisList 
+          devisList = { devisList } />
         <button
           className = "c-button --primary"
-          onClick = { this.onDevisCreationButtonClicked.bind(this) } >
+          onClick = { this.onDevisCreationButtonClicked } >
           Créer un devis
         </button>
         <PanelToggle

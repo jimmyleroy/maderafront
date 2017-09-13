@@ -21,7 +21,7 @@ export default class PanelToggle extends Component {
         <div>
           <div className = "c-panel-toggle">
             <div className = "c-panel-toggle__header">
-              <span>{ this.props.header }</span>
+              <span className = "u-text-heavy">{ this.props.header }</span>
               <span 
                 onClick = { () => this.toggle() }
                 className = "c-panel-toggle__cross">

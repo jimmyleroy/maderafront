@@ -9,13 +9,16 @@ const DevisListItem = ({ devis }) => {
   return (
     <li className = "c-card">
       <div className = "c-card__item">
-        { name }
+        <p className = "u-text-heavy">Nom</p>
+        <p className = "u-margin-top-small">{ name }</p>
       </div>
       <div className = "c-card__item">
-        { commercial }
+        <p className = "u-text-heavy">Commercial</p>
+        <p className = "u-margin-top-small">{ commercial }</p>
       </div>
       <div className = "c-card__item">
-        { client }
+        <p className = "u-text-heavy">Client</p>
+        <p className = "u-margin-top-small">{ client }</p>
       </div>
     </li>
   );
