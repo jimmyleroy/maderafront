@@ -9,7 +9,6 @@ import {
 
 // Pages
 import ProjetPage from './pages/ProjetPage';
-import DevisPage from './pages/DevisPage';
 
 // Components
 import NavigationPanel from './components/common/NavigationPanel';
@@ -34,7 +33,6 @@ class App extends Component {
           <NavigationPanel />
           <div className = "page-content">
             <Route exact path = "/" component = { ProjetPage } />
-            <Route exact path = "/devis" component = { DevisPage } />
           </div>
         </main>
       </Router>

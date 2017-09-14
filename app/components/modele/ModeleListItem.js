@@ -8,11 +8,11 @@ const ModeleListItem = ({ modele }) => {
 
   return (
     <div>
-      <div className = "c-card">
+      <div className = "c-card grid">
         <img
-          className = "c-card__image" 
+          className = "c-card__image one-quarter" 
           src = { imgUrl } />
-        <div>
+        <div className = "four-quarter">
           <span className = "c-card__item u-text-heavy">{ name }</span>
           <p className = "c-card__item u-margin-top-small">{ description }</p>
           <button

@@ -14,25 +14,25 @@ export default class DevisCreation extends Component {
                             id: 1,
                             name: "modèle1",
                             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sem quam, tristique vitae purus ac, fermentum iaculis urna.",
-                            imgUrl: "https://seeklogo.com/images/D/dragon-logo-62F627B731-seeklogo.com.png"
+                            imgUrl: "app/static/images/planche.jpg"
                         },
                         {
                             id: 2,
                             name: "modèle2",
                             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sem quam, tristique vitae purus ac, fermentum iaculis urna.",
-                            imgUrl: "https://www.laboutiquedubois.com/media/produit/epaisseurs-contreplaqu-pm-34.jpg"
+                            imgUrl: "app/static/images/planche2.jpg"
                         },
                         {
                             id: 3,
                             name: "modèle3",
                             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sem quam, tristique vitae purus ac, fermentum iaculis urna.",
-                            imgUrl: "https://seeklogo.com/images/D/dragon-logo-62F627B731-seeklogo.com.png"
+                            imgUrl: "app/static/images/laine.jpg"
                         },
                         {
                             id: 4,
                             name: "modèle4",
                             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sem quam, tristique vitae purus ac, fermentum iaculis urna.",
-                            imgUrl: "https://www.laboutiquedubois.com/media/produit/epaisseurs-contreplaqu-pm-34.jpg"
+                            imgUrl: "app/static/images/tuile.jpg"
                         }
                     ]
                 },
@@ -42,27 +42,27 @@ export default class DevisCreation extends Component {
                     modeleList : [
                         {
                             id: 1,
-                            name: "sacré codec",
+                            name: "modèle1 gamme 2",
                             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sem quam, tristique vitae purus ac, fermentum iaculis urna.",
-                            imgUrl: "https://seeklogo.com/images/D/dragon-logo-62F627B731-seeklogo.com.png"
+                            imgUrl: "app/static/images/planche.jpg"
                         },
                         {
                             id: 2,
-                            name: "modèle2",
+                            name: "modèle2 gamme 2",
                             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sem quam, tristique vitae purus ac, fermentum iaculis urna.",
-                            imgUrl: "https://www.laboutiquedubois.com/media/produit/epaisseurs-contreplaqu-pm-34.jpg"
+                            imgUrl: "app/static/images/planche2.jpg"
                         },
                         {
                             id: 3,
-                            name: "modèle3",
+                            name: "modèle3 gamme 2",
                             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sem quam, tristique vitae purus ac, fermentum iaculis urna.",
-                            imgUrl: "https://seeklogo.com/images/D/dragon-logo-62F627B731-seeklogo.com.png"
-                            },
+                            imgUrl: "app/static/images/laine.jpg"
+                        },
                         {
                             id: 4,
-                            name: "modèle4",
+                            name: "modèle4 gamme 2",
                             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sem quam, tristique vitae purus ac, fermentum iaculis urna.",
-                            imgUrl: "https://www.laboutiquedubois.com/media/produit/epaisseurs-contreplaqu-pm-34.jpg"
+                            imgUrl: "app/static/images/tuile.jpg"
                         }
                     ]
                 }
@@ -75,14 +75,12 @@ export default class DevisCreation extends Component {
 
     onGammeSelectChange(event) {
         this.state.gammeList.map((gamme) => {
-            console.log(this.state.gammeList);
             const optionId = event.target.options[event.target.selectedIndex].id;
             if (gamme.id = optionId) {
                 this.setState({
                     selectedGamme : gamme
                 });
             }
-            console.log(this.state.gammeList);
         });
     }
 

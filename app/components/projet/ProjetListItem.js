@@ -24,24 +24,26 @@ export default class ProjetListItem extends Component {
 
     return (
       <div>
-        <li className = "c-card">
-          <div className = "c-card__item">
+        <li className = "c-card grid has-gutter">
+          <div className = "c-card__item one-fifth">
             <p className = "u-text-heavy">Nom</p>
             <p className = "u-margin-top-small">{ name }</p>
           </div>
-          <div className = "c-card__item">
+          <div className = "c-card__item one-fifth">
             <p className = "u-text-heavy">Commercial</p>
             <p className = "u-margin-top-small">{ commercial }</p>
           </div>
-          <div className = "c-card__item">
+          <div className = "c-card__item one-fifth">
             <p className = "u-text-heavy">Client</p>
             <p className = "u-margin-top-small">{ client }</p>
           </div>
-          <button
-            className = "c-button --primary u-margin-left-small"
-            onClick = { this.onProjetDetailButtonClicked }>
-            Voir le détail
-          </button>
+          <div className = "c-card__item one-fifth push">
+            <button
+              className = "c-button --primary u-margin-left-small"
+              onClick = { this.onProjetDetailButtonClicked }>
+              Voir le détail
+            </button>
+          </div>
         </li>
         <PanelToggle
           ref = "projectDetailPanelToggleReference"

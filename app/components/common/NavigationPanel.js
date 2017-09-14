@@ -7,7 +7,7 @@ const NavigationPanel = () => {
     <nav className = "c-navigation">
         <img
           className = "c-logo" 
-          src = "https://seeklogo.com/images/D/dragon-logo-62F627B731-seeklogo.com.png" />
+          src = "app/static/images/logo.png" />
         <Link to = "/" className = "c-navigation__item">Profil</Link>
         <Link to = "/" className = "c-navigation__item">Projets</Link>
         <Link to = "/" className = "c-navigation__item">Clients</Link>

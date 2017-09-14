@@ -1,5 +1,4 @@
 .c-card {
-  display: flex;
   align-items: center;
   padding: $size-normal;
   margin-bottom: $size-normal;
@@ -7,14 +6,6 @@
 
     &:first-child {
       margin-top: 0;
-    }
-
-    > .c-card__item {
-      margin: 0 $size-normal;
-
-      &:first-child {
-        margin-left: 0;
-      }
     }
 
     > .c-card__image {

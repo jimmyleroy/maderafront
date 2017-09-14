@@ -4,12 +4,9 @@ export default class ProjetCreation extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            projet : {
-                id : null,
-                name : "",
-                commercial : "",
-                client : ""
-            }
+            name : "",
+            commercial : "",
+            client : "",
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -17,17 +14,23 @@ export default class ProjetCreation extends Component {
     }
 
     handleSubmit(event) {
-        event.preventDefault();     
-        this.props.handleSubmit(this.state.projet);
+        event.preventDefault();
+        const projet = {
+            id : null,
+            name : this.state.name,
+            commercial : this.state.commercial,
+            client : this.state.client,
+            devisList : []
+        }     
+
+        this.props.handleSubmit(projet);
+        console.log(projet);
         this.props.toggleCreationPanel();
     }
 
     handleChange(event) {
-        console.log([event.target.name], event.target.value);         
         this.setState({
-            projet : {
-                [event.target.name] : event.target.value
-            }
+            [event.target.name] : event.target.value
         });
     }
 

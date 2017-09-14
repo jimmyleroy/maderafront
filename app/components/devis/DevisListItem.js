@@ -7,7 +7,7 @@ const DevisListItem = ({ devis }) => {
   const client = devis.client;
 
   return (
-    <li className = "c-card">
+    <li className = "c-card grid has-gutter">
       <div className = "c-card__item">
         <p className = "u-text-heavy">Nom</p>
         <p className = "u-margin-top-small">{ name }</p>
