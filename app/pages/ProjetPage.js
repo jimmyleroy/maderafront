@@ -11,78 +11,78 @@ export default class ProjetPage extends Component {
         {
           id : 1,
           name : "projet1",
-          client : "toto le chameau",
-          commercial : "hector le castor",
+          client : "Jean Pierre",
+          commercial : "Charles Paul",
           devisList: [
             {
               id: 1,
               name: "devis1",
-              client: "toto le chameau",
-              commercial: "hector le castor",
+              client: "Jean Pierre",
+              commercial: "Charles Paul",
             },
             {
               id: 2,
               name: "devis2",
-              client: "toto le chameau",
-              commercial: "hector le castor",
+              client: "Jean Pierre",
+              commercial: "Charles Paul",
             },
             {
               id: 3,
               name: "devis3",
-              client: "toto le chameau",
-              commercial: "hector le castor",
+              client: "Jean Pierre",
+              commercial: "Charles Paul",
             }
           ]
         },
         {
           id : 2,
           name : "projet2",
-          client : "toto le chameau",
-          commercial : "hector le castor",
+          client : "Jean Pierre",
+          commercial : "Charles Paul",
           devisList: [
             {
               id: 1,
               name: "devis1",
-              client: "toto le chameau",
-              commercial: "hector le castor",
+              client: "Jean Pierre",
+              commercial: "Charles Paul",
             },
             {
               id: 2,
               name: "devis2",
-              client: "toto le chameau",
-              commercial: "hector le castor",
+              client: "Jean Pierre",
+              commercial: "Charles Paul",
             },
             {
               id: 3,
               name: "devis3",
-              client: "toto le chameau",
-              commercial: "hector le castor",
+              client: "Jean Pierre",
+              commercial: "Charles Paul",
             }
           ]
         },
         {
           id : 3,
           name : "projet3",
-          client : "toto le chameau",
-          commercial : "hector le castor",
+          client : "Jean Pierre",
+          commercial : "Charles Paul",
           devisList: [
             {
               id: 1,
               name: "devis1",
-              client: "toto le chameau",
-              commercial: "hector le castor",
+              client: "Jean Pierre",
+              commercial: "Charles Paul",
             },
             {
               id: 2,
               name: "devis2",
-              client: "toto le chameau",
-              commercial: "hector le castor",
+              client: "Jean Pierre",
+              commercial: "Charles Paul",
             },
             {
               id: 3,
               name: "devis3",
-              client: "toto le chameau",
-              commercial: "hector le castor",
+              client: "Jean Pierre",
+              commercial: "Charles Paul",
             }
           ]
         }
